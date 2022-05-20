@@ -1,5 +1,3 @@
-#key: 734cd4ba79cd49f891556054e23fd3bc
-#secret: wiy9wwahcam82vgwobre2tpvwobul7nm2tbae37v02opvhvj9kmvi0l6hp4vzg7c
 import requests
 import json
 import pandas as pd
@@ -7,8 +5,10 @@ from io import BytesIO, StringIO
 import numpy as np
 from datetime import datetime
 
-params = dict(key="734cd4ba79cd49f891556054e23fd3bc", secret='wiy9wwahcam82vgwobre2tpvwobul7nm2tbae37v02opvhvj9kmvi0l6hp4vzg7c')
+with open('/Users/hamza.ahmed/Coding Projects/Python Apps Authentications/Podsight/Podsight _secret.json', 'r') as f:
+    passcode = json.load(f)
 
+params = dict(Key = passcode['Access']['Key'], secret = passcode['Access']['secret'])
 today = datetime.today().strftime('%Y-%m-%d')
 
 
